@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-preset-react-native": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
+    "flow-bin": "^0.72.0",
     "jest-expo": "~27.0.0",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"

@@ -1,10 +1,11 @@
+// @flow
 import { Button } from 'react-native';
 import styled from 'styled-components';
 
-const StyledButton = styled.Button`
-    font-size: ${props => (props.fontSize ? props.fontSize : '40')} !important;
-    line-height: 24 !important;
-    color: #fff !important;
+const StyledButton = styled(Button)`
+    font-size: ${props => (props.fontSize ? props.fontSize : '40')};
+    line-height: 24;
+    color: #fff;
 `;
 
 export default StyledButton;

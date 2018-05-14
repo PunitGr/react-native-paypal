@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import { View, Button, Image } from 'react-native';
 
@@ -12,12 +13,26 @@ const ButtonContainer = styled.View`
     padding: 20px;
 `;
 
-export default class LoginPage extends Component {
+type Props = {
+    navigation: {
+        navigate: Function,
+    },
+};
+
+type State = {
+    contact: string,
+    password: string,
+    onContactInputFocus: boolean,
+    onPasswordInputFocus: boolean,
+    hasPhoneNumber: boolean,
+};
+
+export default class LoginPage extends Component<State, Props> {
     static navigationOptions = {
-        header: null
+        header: null,
     };
 
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
         this.state = {
             contact: '',
@@ -28,9 +43,11 @@ export default class LoginPage extends Component {
         };
     }
 
+    state: State;
+
     handleContactTypeSelection = () => {
         this.setState({
-            hasPhoneNumber: !this.state.hasPhoneNumber
+            hasPhoneNumber: !this.state.hasPhoneNumber,
         });
     }
 
@@ -38,8 +55,8 @@ export default class LoginPage extends Component {
         const { navigate } = this.props.navigation;
         const { hasPhoneNumber } = this.state;
         return (
-            <View style={{height: '100%', marginTop: 10}}>
-                <View style={{marginTop: 24, alignItems: 'center'}}>
+            <View style={{ height: '100%', marginTop: 10 }}>
+                <View style={{ marginTop: 24, alignItems: 'center' }}>
                     <Image
                         style={{ width: 120, height: 120 }}
                         source={require('../../assets/png/paypal-icon.png')}
@@ -49,34 +66,34 @@ export default class LoginPage extends Component {
                     <View style={{ width: '100%', flex: 1, justifyContent: 'center' }}>
                         <Input
                             style={{
-                                borderColor: this.state.onContactInputFocus ? '#169BD7' : '#C3C8CC'
+                                borderColor: this.state.onContactInputFocus ? '#169BD7' : '#C3C8CC',
                             }}
                             placeholder={hasPhoneNumber ? 'Phone number' : 'Email'}
                             placeholderTextColor="#C3C8CC"
-                            onChangeText={(contact) => this.setState({contact})}
+                            onChangeText={contact => this.setState({ contact })}
                             onFocus={() => this.setState({ onContactInputFocus: true })}
                             onBlur={() => this.setState({ onContactInputFocus: false })}
                             type={hasPhoneNumber ? 'number' : 'email'}
                         />
-                        <View style={{ flexDirection: 'row', marginTop: 20, width: "100%" }}>
+                        <View style={{ flexDirection: 'row', marginTop: 20, width: '100%' }}>
                             <Input
                                 style={{
                                     borderColor: this.state.onPasswordInputFocus ? '#169BD7' : '#C3C8CC',
-                                    width: "75%"
+                                    width: '75%',
                                 }}
                                 placeholder="Password"
                                 placeholderTextColor="#C3C8CC"
-                                onChangeText={(password) => this.setState({password})}
+                                onChangeText={password => this.setState({ password })}
                                 onFocus={() => this.setState({ onPasswordInputFocus: true })}
                                 onBlur={() => this.setState({ onPasswordInputFocus: false })}
                                 secureTextEntry={true}
                             />
                             <View style={{
                                     alignItems: 'flex-end',
-                                    justifyContent:'center',
+                                    justifyContent: 'center',
                                     borderBottomWidth: 1,
                                     borderColor: this.state.onPasswordInputFocus ? '#169BD7' : '#C3C8CC',
-                                    width: "25%"
+                                    width: '25%',
                                 }}
                             >
                                 <Button
@@ -110,14 +127,14 @@ export default class LoginPage extends Component {
                             title="New to PayPal? Sign up"
                         />
                     </View>
-                    <ButtonContainer highlight={ this.state.contact && this.state.password }>
+                    <ButtonContainer highlight={this.state.contact && this.state.password}>
                         <Button
                             onPress={() =>
                                 navigate('Home')
                             }
                             title="Log In"
                             color="#fff"
-                            style={{  fontSize: 40, lineHeight: 24 }}
+                            style={{ fontSize: 40, lineHeight: 24 }}
                         />
                     </ButtonContainer>
                 </View>

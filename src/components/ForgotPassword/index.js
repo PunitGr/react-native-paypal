@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import { View, TextInput, Button, Image } from 'react-native';
 import styled from 'styled-components';
@@ -24,22 +25,36 @@ const styles = {
         borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+};
+
+type Props = {
+    navigation: {
+        navigate: Function,
+        state: Object,
+    },
+};
+
+type State = {
+    contact: string,
+    onContactInputFocus: string,
 };
 
 
-class ForgotPassword extends Component {
+class ForgotPassword extends Component<State, Props> {
     static navigationOptions = {
-        header: null
+        header: null,
     };
 
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
         this.state = {
             contact: '',
             onContactInputFocus: '',
         };
     }
+
+    state: State;
 
     render() {
         const { navigate, state: navigationProp } = this.props.navigation;
@@ -57,15 +72,15 @@ class ForgotPassword extends Component {
                     </Title>
                     <Paragraph>
                         Enter the {contact === 'email' ? 'email ' : 'phone number '}
-                        you use for PayPal, and we'll help you create a new password.
+                        you use for PayPal, and we{'\''}ll help you create a new password.
                     </Paragraph>
                     <Input
                         style={{
-                            borderColor: this.state.onContactInputFocus ? '#169BD7' : '#C3C8CC'
+                            borderColor: this.state.onContactInputFocus ? '#169BD7' : '#C3C8CC',
                         }}
                         placeholder={contact === 'email' ? 'Email' : 'Phone number'}
                         placeholderTextColor="#C3C8CC"
-                        onChangeText={(contact) => this.setState({contact})}
+                        onChangeText={val => this.setState({ contact: val })}
                         onFocus={() => this.setState({ onContactInputFocus: true })}
                         onBlur={() => this.setState({ onContactInputFocus: false })}
                         type={contact === 'email' ? 'email' : 'number'}
@@ -81,7 +96,7 @@ class ForgotPassword extends Component {
                             }
                             title="Next"
                             color="#fff"
-                            style={{  ...styles.button }}
+                            style={{ ...styles.button }}
                         />
                     </View>
                     {
