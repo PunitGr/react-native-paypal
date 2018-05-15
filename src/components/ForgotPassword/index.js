@@ -1,9 +1,10 @@
 // @flow
 import React, { Component } from 'react';
-import { View, TextInput, Button, Image } from 'react-native';
+import { View, Button } from 'react-native';
 import styled from 'styled-components';
 
 import { Input, Title, Paragraph } from '../common';
+import paypalIcon from '../../assets/png/paypal-icon.png';
 
 const PaypalIcon = styled.Image`
     width: 120;
@@ -29,10 +30,7 @@ const styles = {
 };
 
 type Props = {
-    navigation: {
-        navigate: Function,
-        state: Object,
-    },
+    navigation: Object,
 };
 
 type State = {
@@ -63,7 +61,7 @@ class ForgotPassword extends Component<State, Props> {
             <View style={{ flex: 1, height: '100%' }}>
                 <View style={{ marginTop: 24, alignItems: 'center' }}>
                     <PaypalIcon
-                        source={require('../../assets/png/paypal-icon.png')}
+                        source={paypalIcon}
                     />
                 </View>
                 <View style={{ paddingTop: 20, padding: 30 }}>

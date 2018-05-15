@@ -5,6 +5,7 @@ import { View, Button, Image } from 'react-native';
 import styled from 'styled-components';
 
 import { Input } from '../common';
+import paypalIcon from '../../assets/png/paypal-icon.png';
 
 const ButtonContainer = styled.View`
     bottom: 0;
@@ -59,7 +60,7 @@ export default class LoginPage extends Component<State, Props> {
                 <View style={{ marginTop: 24, alignItems: 'center' }}>
                     <Image
                         style={{ width: 120, height: 120 }}
-                        source={require('../../assets/png/paypal-icon.png')}
+                        source={paypalIcon}
                     />
                 </View>
                 <View style={{ padding: 30, height: '57%' }}>

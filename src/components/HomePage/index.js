@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, Image } from 'react-native';
 import styled from 'styled-components';
 
+import notificationIcon from '../../assets/png/notification.png';
+import defaultUserIcon from '../../assets/png/user.png';
+import settingsIcon from '../../assets/png/settings.png';
+
 const Header = styled.View`
     flex-direction: row;
     justify-content: space-between;
@@ -14,7 +18,7 @@ const Header = styled.View`
 
 class HomePage extends Component {
     static navigationOptions = {
-        header: null
+        header: null,
     };
 
     constructor(props) {
@@ -28,15 +32,15 @@ class HomePage extends Component {
                     <Header>
                         <Image
                             style={{ width: 24, height: 24 }}
-                            source={require('../../assets/png/notification.png')}
+                            source={notificationIcon}
                         />
                         <Image
                             style={{ width: 48, height: 48 }}
-                            source={require('../../assets/png/user.png')}
+                            source={defaultUserIcon}
                         />
                         <Image
                             style={{ width: 24, height: 24 }}
-                            source={require('../../assets/png/settings.png')}
+                            source={settingsIcon}
                         />
                     </Header>
                     <View style={{ backgroundColor: '#00887E', height: 300 }}>
