@@ -75,6 +75,7 @@ export default class LoginPage extends Component<State, Props> {
                             onFocus={() => this.setState({ onContactInputFocus: true })}
                             onBlur={() => this.setState({ onContactInputFocus: false })}
                             type={hasPhoneNumber ? 'number' : 'email'}
+                            keyboardType={hasPhoneNumber ? 'numeric' : 'email-address'}
                         />
                         <View style={{ flexDirection: 'row', marginTop: 20, width: '100%' }}>
                             <Input
