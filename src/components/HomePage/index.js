@@ -47,12 +47,20 @@ const ButtonContent = styled.View`
     width: 100%;
 `;
 
-class HomePage extends Component {
+type Props = {
+    navigation: {
+        navigate: Function,
+    },
+};
+
+class HomePage extends Component<Props> {
     static navigationOptions = {
         header: null,
     };
 
     render() {
+        const { navigate } = this.props.navigation;
+
         return (
             <ScrollView>
                 <View style={{ flex: 1 }}>
@@ -74,7 +82,7 @@ class HomePage extends Component {
                         <View>
                             <Button
                                 onPress={() =>
-                                    console.log('Hello')
+                                    navigate('BalanceScreen')
                                 }
                                 color="#fff"
                             >
@@ -111,10 +119,10 @@ class HomePage extends Component {
                                 style={{ width: 72, height: 80, marginTop: 20 }}
                                 source={invoice}
                             />
-                            <Paragraph style={{ color: '#fff' }}>
+                            <Paragraph color="#fff">
                                 All your transactions are saved here.
                             </Paragraph>
-                            <Paragraph style={{ color: '#fff', marginTop: 4 }}>
+                            <Paragraph color="#fff" style={{ marginTop: 4 }}>
                                 Quickly find what you need when you need it.
                             </Paragraph>
                         </View>

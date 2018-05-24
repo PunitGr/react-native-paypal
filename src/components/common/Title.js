@@ -3,7 +3,8 @@ import { Text } from 'react-native';
 import styled from 'styled-components';
 
 const Title = styled(Text)`
-    font-size: 32;
+    font-size: ${props => (props.size ? props.size : 32)};
+    color: ${props => (props.color ? props.color : '#000')};
     text-align: center;
 `;
 
