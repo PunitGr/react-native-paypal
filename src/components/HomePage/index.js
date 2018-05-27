@@ -12,7 +12,7 @@ import rightArrow from '../../assets/png/right-arrow.png';
 import invoice from '../../assets/png/invoice.png';
 import noteUp from '../../assets/png/note-up.png';
 import noteDown from '../../assets/png/note-down.png';
-// import tag from '../../assets/png/tag.png';
+import tag from '../../assets/png/tag.png';
 
 const Header = styled.View`
     flex-direction: row;
@@ -51,16 +51,18 @@ const ButtonContent = styled.View`
 `;
 
 const IconWrapper = styled.View`
-    width: 96px;
-    height: 96px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     shadow-offset: 0px 0px;
-    shadow-opacity: 0.2,
-    shadow-radius: 5px,
-    shadow-color: #00887E,
-    background-color: #006170;
+    shadow-opacity: 0.2;
+    shadow-radius: 5px;
+    shadow-color:
+        ${props => (props.shadowColor ? props.shadowColor : '#00887E')};
+    background-color:
+        ${props => (props.backgroundColor ? props.backgroundColor : '#006170')};
     border-radius: 50%;
 `;
 
@@ -80,7 +82,7 @@ class HomePage extends Component<Props> {
         const { navigate } = this.props.navigation;
 
         const SendAndRequest = () => (
-            <View style={{ backgroundColor: '#00887E', paddingTop: 20, paddingBottom: 20 }}>
+            <View style={{ backgroundColor: '#00887E', paddingTop: 20 }}>
                 <Title size={15} color="#fff">
                     SEND AND REQUEST
                 </Title>
@@ -97,7 +99,7 @@ class HomePage extends Component<Props> {
                     <View style={{ flexDirection: 'column', alignItems: 'center' }}>
                         <IconWrapper>
                             <Image
-                                style={{ width: 56, height: 56 }}
+                                style={{ width: 40, height: 40 }}
                                 source={noteUp}
                             />
                         </IconWrapper>
@@ -106,13 +108,38 @@ class HomePage extends Component<Props> {
                     <View style={{ flexDirection: 'column', alignItems: 'center' }}>
                         <IconWrapper>
                             <Image
-                                style={{ width: 56, height: 56 }}
+                                style={{ width: 40, height: 40 }}
                                 source={noteDown}
                             />
                         </IconWrapper>
                         <Paragraph color="#fff">Request Payments</Paragraph>
                     </View>
                 </View>
+            </View>
+        );
+
+        const Offer = () => (
+            <View style={{
+                backgroundColor: '#CDD6DA',
+                paddingTop: 20,
+                paddingBottom: 32,
+                alignItems: 'center',
+                }}
+            >
+                <Title size={14}>
+                    MORE
+                </Title>
+                <IconWrapper
+                    shadowColor="#CDD6DA"
+                    backgroundColor="#fff"
+                    style={{ marginTop: 30 }}
+                >
+                    <Image
+                        style={{ width: 40, height: 40 }}
+                        source={tag}
+                    />
+                </IconWrapper>
+                <Paragraph>Offers</Paragraph>
             </View>
         );
 
@@ -183,6 +210,7 @@ class HomePage extends Component<Props> {
                         </View>
                     </View>
                     <SendAndRequest />
+                    <Offer />
                 </View>
             </ScrollView>
         );
