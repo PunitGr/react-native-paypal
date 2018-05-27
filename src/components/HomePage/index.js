@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, Image, TouchableHighlight } from 'react-native';
 import styled from 'styled-components';
 
-import { Paragraph } from '../common';
+import { Title, Paragraph } from '../common';
 
 import notificationIcon from '../../assets/png/notification.png';
 import defaultUserIcon from '../../assets/png/user.png';
 import settingsIcon from '../../assets/png/settings.png';
 import rightArrow from '../../assets/png/right-arrow.png';
 import invoice from '../../assets/png/invoice.png';
+import noteUp from '../../assets/png/note-up.png';
+import noteDown from '../../assets/png/note-down.png';
+// import tag from '../../assets/png/tag.png';
 
 const Header = styled.View`
     flex-direction: row;
@@ -47,6 +50,20 @@ const ButtonContent = styled.View`
     width: 100%;
 `;
 
+const IconWrapper = styled.View`
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    shadow-offset: 0px 0px;
+    shadow-opacity: 0.2,
+    shadow-radius: 5px,
+    shadow-color: #00887E,
+    background-color: #006170;
+    border-radius: 50%;
+`;
+
 type Props = {
     navigation: {
         navigate: Function,
@@ -58,8 +75,46 @@ class HomePage extends Component<Props> {
         header: null,
     };
 
+
     render() {
         const { navigate } = this.props.navigation;
+
+        const SendAndRequest = () => (
+            <View style={{ backgroundColor: '#00887E', paddingTop: 20, paddingBottom: 20 }}>
+                <Title size={15} color="#fff">
+                    SEND AND REQUEST
+                </Title>
+                <View
+                    style={{
+                        flexDirection: 'row',
+                        flex: 1,
+                        marginBottom: 30,
+                        marginTop: 30,
+                        alignItems: 'center',
+                        justifyContent: 'space-around',
+                    }}
+                >
+                    <View style={{ flexDirection: 'column', alignItems: 'center' }}>
+                        <IconWrapper>
+                            <Image
+                                style={{ width: 56, height: 56 }}
+                                source={noteUp}
+                            />
+                        </IconWrapper>
+                        <Paragraph color="#fff">Send Payments</Paragraph>
+                    </View>
+                    <View style={{ flexDirection: 'column', alignItems: 'center' }}>
+                        <IconWrapper>
+                            <Image
+                                style={{ width: 56, height: 56 }}
+                                source={noteDown}
+                            />
+                        </IconWrapper>
+                        <Paragraph color="#fff">Request Payments</Paragraph>
+                    </View>
+                </View>
+            </View>
+        );
 
         return (
             <ScrollView>
@@ -96,7 +151,7 @@ class HomePage extends Component<Props> {
                             </Button>
                             <Button
                                 onPress={() =>
-                                    console.log('Hello')
+                                    navigate('BalanceScreen')
                                 }
                                 color="#fff"
                             >
@@ -127,11 +182,7 @@ class HomePage extends Component<Props> {
                             </Paragraph>
                         </View>
                     </View>
-                    <View style={{ backgroundColor: '#00887E', height: 300 }}>
-                        <Text>
-                            Hello
-                        </Text>
-                    </View>
+                    <SendAndRequest />
                 </View>
             </ScrollView>
         );
