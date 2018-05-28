@@ -8,6 +8,7 @@ const Paragraph = styled(Text)`
     color: ${props => (props.color ? props.color : '#000')};;
     text-align: center;
     margin-top: 20;
+    font-family: HKGrotesk-regular;
 `;
 
 export default Paragraph;

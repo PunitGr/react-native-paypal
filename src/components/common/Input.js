@@ -11,6 +11,7 @@ const Input = styled(TextInput)`
     border-bottom-width: 1;
     padding: 8px;
     border-color: #C3C8CC;
+    font-family: HKGrotesk-regular;
 `;
 
 export default Input;
