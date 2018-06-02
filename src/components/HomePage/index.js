@@ -17,11 +17,11 @@ import tag from '../../assets/png/tag.png';
 const Header = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 40;
-    padding-left: 20;
-    padding-right: 20;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     height: auto;
-    padding-bottom: 20;
+    padding-bottom: 20px;
 `;
 
 const Button = styled(TouchableHighlight)`
@@ -35,22 +35,22 @@ const Button = styled(TouchableHighlight)`
         rgba(234, 231, 239, 1.00)
     );
     border-width: 0;
-    border-top-width: 1;
+    border-top-width: 1px;
     width: 100%;
 `;
 
 const ButtonContent = styled.View`
     flex-direction: row;
     align-items: center;
-    padding-top: 20;
-    padding-bottom: 20;
-    padding-left: 20;
-    padding-right: 20;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     justify-content: space-between;
     width: 100%;
 `;
 
-const IconWrapper = styled.View`
+const IconWrapper = styled(TouchableHighlight)`
     width: 80px;
     height: 80px;
     display: flex;
@@ -133,6 +133,9 @@ class HomePage extends Component<Props> {
                     shadowColor="#CDD6DA"
                     backgroundColor="#fff"
                     style={{ marginTop: 30 }}
+                    onPress={() =>
+                        navigate('OfferScreen')
+                    }
                 >
                     <Image
                         style={{ width: 40, height: 40 }}

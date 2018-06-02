@@ -9,7 +9,7 @@ import paypalIcon from '../../assets/png/paypal-icon.png';
 
 const ButtonContainer = styled.View`
     bottom: 0;
-    height: 80;
+    height: 80px;
     background-color: ${props => (props.highlight ? '#169BD7' : '#C3C8CC')};
     padding: 20px;
 `;

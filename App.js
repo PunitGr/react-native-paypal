@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { AppLoading, Font } from 'expo';
 
@@ -7,6 +7,7 @@ import LoginPage from './src/components/LoginPage';
 import HomePage from './src/components/HomePage';
 import ForgotPassword from './src/components/ForgotPassword';
 import BalanceScreen from './src/components/BalanceScreen';
+import OfferScreen from './src/components/OfferScreen';
 
 import HKGroteskBold from './src/assets/fonts/HKGrotesk-Bold.ttf';
 import HKGroteskLight from './src/assets/fonts/HKGrotesk-Light.ttf';
@@ -53,6 +54,7 @@ class App extends React.Component<Props, State> {
         Home: { screen: HomePage },
         ForgotPassword: { screen: ForgotPassword },
         BalanceScreen: { screen: BalanceScreen },
+        OfferScreen: { screen: OfferScreen },
       },
       {
         initialRouteName: 'Login',

@@ -17,11 +17,11 @@ const Container = styled.View`
 `;
 
 const BalanceView = styled.View`
-    margin-top: 80;
-    padding-bottom: 40;
-    margin-bottom: 40;
+    margin-top: 80px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
     border-width: 0;
-    border-bottom-width: 1;
+    border-bottom-width: 1px;
     border-color: #C0C1C4;
     width: 92%;
 `;

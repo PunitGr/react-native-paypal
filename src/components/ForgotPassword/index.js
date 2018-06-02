@@ -11,23 +11,22 @@ const PaypalIcon = styled.Image`
     height: 120;
 `;
 
-const styles = {
-    button: {
-        fontSize: 40,
-        lineHeight: 24,
-    },
-    roundButton: {
-        alignSelf: 'center',
-        height: 54,
-        width: 240,
-        backgroundColor: '#169BD7',
-        padding: 8,
-        marginTop: 24,
-        borderRadius: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-};
+const Next = styled(Button)`
+    font-size: 40px;
+    line-height: 24px;
+`;
+
+const RoundButtonContainer = styled.View`
+    align-self: center;
+    height: 54px;
+    width: 240px;
+    background-color: #169BD7;
+    padding: 8px;
+    marginTop: 24px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+`;
 
 type Props = {
     navigation: Object,
@@ -84,19 +83,15 @@ class ForgotPassword extends Component<State, Props> {
                         type={contact === 'email' ? 'email' : 'number'}
                         round
                     />
-                    <View style={{
-                            ...styles.roundButton,
-                        }}
-                    >
-                        <Button
+                    <RoundButtonContainer>
+                        <Next
                             onPress={() =>
                                 navigate('Home')
                             }
                             title="Next"
                             color="#fff"
-                            style={{ ...styles.button }}
                         />
-                    </View>
+                    </RoundButtonContainer>
                     {
                         contact === 'email' &&
                         <View style={{ marginTop: 16 }}>
