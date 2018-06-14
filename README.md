@@ -1,5 +1,5 @@
 # React Native PayPal
-React native app with same style as PayPal.
+PayPal clone with react native.
 
 ![app-snapshot](./screenshots/github.png)
 
