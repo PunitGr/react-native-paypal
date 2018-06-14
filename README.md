@@ -1,29 +1,12 @@
-# React native paypal clone
+# React Native PayPal
+React native app with same style as PayPal.
 
-### To setup
-Clone the repo and then do,
+![app-snapshot](./screenshots/github.png)
+
+### Installation
 ```
-yarn
-yarn start
+$ git clone git@github.com:PunitGr/react-native-paypal.git
+$ yarn
+$ cd react-native-paypal
+$ yarn start
 ```
-
-### Screenshots
-
-* **LoginScreen**
-
-    ![login-screen](https://github.com/PunitGr/react-native-paypal/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%206s%20-%202018-06-11%20at%2001.12.10.png)
-
-    ![login-screen2](https://github.com/PunitGr/react-native-paypal/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%206s%20-%202018-06-11%20at%2001.12.30.png)
-
-* **Forgot Password**
-
-    ![forgot-password](https://github.com/PunitGr/react-native-paypal/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%206s%20-%202018-06-11%20at%2001.12.37.png)
-
-
-* **Balance Screen**
-
-    ![balance-screen](https://github.com/PunitGr/react-native-paypal/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%206s%20-%202018-06-11%20at%2001.12.48.png)
-
-* **Home Screen**
-
-    ![home-screen](https://github.com/PunitGr/react-native-paypal/blob/master/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%206s%20-%202018-06-11%20at%2001.13.16.png)
