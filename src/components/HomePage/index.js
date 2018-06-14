@@ -97,7 +97,11 @@ class HomePage extends Component<Props> {
                     }}
                 >
                     <View style={{ flexDirection: 'column', alignItems: 'center' }}>
-                        <IconWrapper>
+                        <IconWrapper
+                            onPress={() =>
+                                navigate('OfferScreen')
+                            }
+                        >
                             <Image
                                 style={{ width: 40, height: 40 }}
                                 source={noteUp}
@@ -106,7 +110,11 @@ class HomePage extends Component<Props> {
                         <Paragraph color="#fff">Send Payments</Paragraph>
                     </View>
                     <View style={{ flexDirection: 'column', alignItems: 'center' }}>
-                        <IconWrapper>
+                        <IconWrapper
+                            onPress={() =>
+                                navigate('OfferScreen')
+                            }
+                        >
                             <Image
                                 style={{ width: 40, height: 40 }}
                                 source={noteDown}
